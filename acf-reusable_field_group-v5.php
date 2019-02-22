@@ -102,7 +102,7 @@ class acf_field_reusable_field_group extends acf_field {
         $r      = array();
 
         $current_id = is_object( $post ) ? $post->ID : $_POST['parent'];
-        $current_group = _acf_get_field_group_by_id($current_id);
+        $current_group = acf_get_field_group($current_id);
 
         foreach( $groups as $group ) {
             $key = $group["key"];
@@ -588,7 +588,7 @@ class acf_field_reusable_field_group extends acf_field {
 
     function load_field( $field ) {
 
-        $group  = _acf_get_field_group_by_key($field["group_key"]);
+        $group = acf_get_field_group($field["group_key"]);
         $fields = acf_get_fields($group);
         $field['sub_fields'] = $fields;
 

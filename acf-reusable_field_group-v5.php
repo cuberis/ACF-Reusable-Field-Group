@@ -57,12 +57,9 @@ class acf_field_reusable_field_group extends acf_field {
 		$this->l10n = array(
 			'error'	=> __('Error! Please select a field group', 'acf-reusable_field_group'),
 		);
-
-		add_filter("acf/get_field_types",								array($this, 'get_field_types'), 10, 1);
-		
 				
 		// do not delete!
-    	parent::__construct();
+    		parent::__construct();
     	
 	}
 	

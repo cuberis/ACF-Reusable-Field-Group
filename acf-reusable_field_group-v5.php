@@ -159,6 +159,7 @@ class acf_field_reusable_field_group extends acf_field {
         $name_prefix = '';
 
         if (isset($field['parent'])) {
+            $field['prefix'] = str_replace('row-', '', $field['prefix']);
             preg_match_all('/\[(field_\w+)\](\[(\d+)\])?/', $field['prefix'], $parent_fields);
 
 
